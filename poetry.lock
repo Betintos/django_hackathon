@@ -30,6 +30,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-filter"
+version = "24.2"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+Django = ">=4.2"
+
+[[package]]
 name = "djangorestframework"
 version = "3.15.1"
 description = "Web APIs for Django, made easy."
@@ -199,11 +210,12 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "6ebe97463629a39078ce30bd4e128b11c652af9a27bb846cc3101a4f177a5660"
+content-hash = "6ec91436f77bae2792d0e7cbc13862ab75fa9225c9d11a90219d2e4f4c5189dd"
 
 [metadata.files]
 asgiref = []
 django = []
+django-filter = []
 djangorestframework = []
 djangorestframework-simplejwt = []
 drf-yasg = []
