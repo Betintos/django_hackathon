@@ -34,10 +34,10 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=False)
     activation_code = models.CharField(max_length=10, blank=True)
 
-    objects = UserManager()
-
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
+    objects = UserManager()
 
     def __str__(self):
         return self.email
