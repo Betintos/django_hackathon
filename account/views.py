@@ -22,8 +22,7 @@ class RegisterView(APIView):
 
 class ActivationView(APIView):
     def get(self, request, email, activation_code):
-        # user = User.objects.get(email=request.data["email"])
-        user = User.objects.get(email=email)
+        user = User.objects.filter(email=email, activation_code=activation_code).first()
         if not user:
             return Response("Пользователь не найден", 404)
         user.activation_code = ""
