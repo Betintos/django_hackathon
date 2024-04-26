@@ -1,20 +1,22 @@
 [tool.poetry]
-name = "django-hackathon"
+name = "django_hackathon"
 version = "0.1.0"
 description = ""
-authors = ["Betintos <qed.beknazar@gmail.com>"]
-readme = "README.md"
+authors = ["marlen"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 djangorestframework = "^3.15.1"
 djangorestframework-simplejwt = "^5.3.1"
 psycopg2-binary = "^2.9.9"
 python-decouple = "^3.8"
 pillow = "^10.3.0"
 drf-yasg = "^1.21.7"
+django-filter = "^24.2"
+django-jazzmin = "^3.0.0"
 
+[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
