@@ -1,11 +1,10 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 
 from .views import ProductViewSet
 
-router = DefaultRouter()
-router.register('goods', ProductViewSet)
+
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', ProductViewSet.as_view()),
+     path('image/<str:image_name>/', ProductViewSet.as_view(), name='image-view')
 ]

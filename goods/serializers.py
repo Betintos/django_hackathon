@@ -13,6 +13,7 @@ class ProductSerializer(serializers.ModelSerializer):
         product.save()
         return product
     
+    
 class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
