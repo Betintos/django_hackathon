@@ -5,7 +5,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework.response import Response
 
-from .models import Product, Category
+from .models import Product
 from .serializers import ProductSerializer, ProductListSerializer
 from .permissions import IsOwnerOrReadOnly
 
