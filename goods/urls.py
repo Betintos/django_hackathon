@@ -1,10 +1,17 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 from .views import ProductViewSet
 
-
+router = DefaultRouter()
+router.register('goods', ProductViewSet)
 
 urlpatterns = [
-    path('', ProductViewSet.as_view()),
-     path('image/<str:image_name>/', ProductViewSet.as_view(), name='image-view')
+    path('', include(router.urls)),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

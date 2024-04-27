@@ -9,7 +9,7 @@ urlpatterns = [
     path(
         "activate/<str:email>/<str:activation_code>/",
         ActivationView.as_view(),
-        name="activate",
+        name="activate"
     ),
     path("login/", TokenObtainPairView.as_view()),
     path("refresh/", TokenRefreshView.as_view()),

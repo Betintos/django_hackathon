@@ -3,9 +3,7 @@ from django.contrib.auth import get_user_model
 
 from .utils import send_activation_code
 
-
 User = get_user_model()
-
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
