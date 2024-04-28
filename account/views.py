@@ -54,13 +54,18 @@ class PasswordReset(generics.GenericAPIView):
 
 
 class PasswordResetView(generics.GenericAPIView):
-    queryset =User.objects.all()
+    queryset = User.objects.all()
     serializer_class = PasswordResetSerializer
 
     def patch(self, request, *args, **kwargs):
         pk = kwargs.get("pk", None)
         if not pk:
-            return Response({"error": "Пользователь не найден"})
+            return Response({"error": "Method PUT not allowed"})
+
+        try:
+            instance = User.objects.get(pk=pk)
+        except:
+            return Response("User does not exist", 404)
 
         serializer = self.serializer_class(
             data=request.data,

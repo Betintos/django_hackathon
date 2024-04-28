@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     "drf_yasg",
     # apps
     "account",
-    'goods',
-
+    "goods",
+    "orders",
 ]
 
 MIDDLEWARE = [
@@ -151,7 +151,6 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
-
 }
 
 from datetime import timedelta
