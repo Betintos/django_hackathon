@@ -60,6 +60,7 @@ class PasswordResetSerializer(serializers.Serializer):
         pk = self.context.get("kwargs").get("pk")
         if not token or not pk:
             raise  serializers.ValidationError("Нет данных")
+            
         user = User.objects.get(pk=pk)
 
         if not PasswordResetTokenGenerator().check_token(user, token):

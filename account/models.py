@@ -4,8 +4,6 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
 
 
-from orders.models import Address
-
 class UserManager(BaseUserManager):
     def _create_user(self, email, password, **extra):
         if not email:
@@ -35,7 +33,6 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=False)
     activation_code = models.CharField(max_length=10, blank=True)
-    address = models.ForeignKey(Address, on_delete=models.SET_NULL, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
