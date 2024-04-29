@@ -1,7 +1,10 @@
 djangorestframework
 djangorestframework-simplejwt
+django-filter
 psycopg2-binary
 python-decouple
-pillow
+Pillow
 drf-yasg
 django-filter
+django-jazzmin
+ipython
