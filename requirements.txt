@@ -6,4 +6,3 @@ Pillow
 drf-yasg
 django-filter
 django-jazzmin
-ipython
