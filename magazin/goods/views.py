@@ -19,11 +19,12 @@ class ProductViewSet(ModelViewSet):
     def get_permissions(self):
         if self.action in ['list', 'retrive']:
             self.permission_classes = [AllowAny]
-        elif self.action in ['create']:
-            self.permission_classes = [IsAuthenticated]
+        elif self.action == 'create':
+            self.permission_classes = [IsAdminUser]
         elif self.action in ['update', 'partial_update', 'destroy']:
             self.permission_classes = [IsOwnerOrReadOnly]
-        return [permission() for permission in self.permission_classes]
+        elif self.action == 'buy':
+            self.permission_classes = [IsAuthenticated]
     
     def get_serializer_class(self):
         if self.action == 'list':
