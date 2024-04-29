@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import CommentViewSet, ProductViewSet, LikeViewSet, FavoriteViewSet, ReviewLikeViewSet, ReviewViewSet
+from .views import CommentViewSet, ProductViewSet, LikeViewSet, FavoriteViewSet, ReviewLikeViewSet, ReviewViewSet, RatingCreateAPIView, RatingListAPIView
 
 
 # ===========================ОТЗЫВ===========================
@@ -39,4 +39,14 @@ router.register(r'favorites', FavoriteViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+]
+
+# ===========================РЕЙТИНГ===========================
+# urlpatterns = [
+#     path('top-rated-products/', TopRatedProductList.as_view(), name='top-rated-products'),
+# ]
+
+urlpatterns = [
+    path('ratings/', RatingCreateAPIView.as_view(), name='rating-create'),
+    path('ratings/<int:pk>/', RatingListAPIView.as_view(), name='rating-list'),
 ]

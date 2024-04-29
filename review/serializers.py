@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Review, Comment, User, Like, Favorite, Product, ReviewLike
+from .models import Review, Comment, User, Like, Favorite, Product, ReviewLike, Rating
 
 # ===========================ОТЗЫВ===========================
 class UserSerializer(serializers.ModelSerializer):
@@ -101,3 +101,9 @@ class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
         fields = ['user', 'product']
+
+# ===========================РЕЙТИНГ===========================
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = '__all__'
